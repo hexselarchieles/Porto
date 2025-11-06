@@ -1,0 +1,211 @@
+/* CSS untuk .reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- CSS Marquee (FINAL RESPONSIF) --- */
+:root {
+    --color-text: #ffffff;      
+    --color-bg: #1F2937;      /* bg-gray-800 */
+    --color-bg-accent: #111827; /* bg-gray-900 */
+    
+    /* Ukuran DEFAULT (HP: horizontal) */
+    --size: 10rem; 
+    --gap: 1rem;
+    --duration: 40s; 
+    
+    --scroll-start: 0;
+    --scroll-end: calc(-100% - var(--gap));
+}
+
+/* Ukuran DESKTOP (lg: 1024px, vertikal) */
+@media (min-width: 1024px) {
+    :root {
+        /* INI SUDAH DIPERBAIKI (dari 30rem menjadi 8rem) */
+        --size: 22rem; 
+        --gap: 2rem;
+        --duration: 90s; 
+    }
+}
+
+/* Pembungkus individual untuk setiap marquee */
+.marquee-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+}
+
+.marquee {
+    display: flex;
+    user-select: none;
+    gap: var(--gap);
+    flex-direction: row; 
+    mask-image: linear-gradient(to right,
+        hsl(0 0% 0% / 0),
+        hsl(0 0% 0% / 1) 20%,
+        hsl(0 0% 0% / 1) 80%,
+        hsl(0 0% 0% / 0)
+    );
+    width: 100%;
+    height: auto;
+}
+
+.marquee__group {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: var(--gap);
+    min-width: 100%; 
+    animation: scroll-x var(--duration) linear infinite;
+    flex-direction: row; /* Default: horizontal */
+    
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee__group {
+        animation-play-state: paused;
+    }
+}
+
+.marquee--reverse .marquee__group {
+    animation-direction: reverse;
+    animation-delay: calc(var(--duration) / -2); 
+}
+
+/* --- STYLES UNTUK DESKTOP (lg: 1024px) --- */
+@media (min-width: 1024px) {
+    .marquee-container {
+        flex-direction: row;
+    }
+    
+    .marquee {
+        flex-direction: column; 
+        mask-image: linear-gradient(to bottom,
+            hsl(0 0% 0% / 0),
+            hsl(0 0% 0% / 1) 10%,
+            hsl(0 0% 0% / 1) 90%,
+            hsl(0 0% 0% / 0)
+        );
+        width: auto;
+        height: 100%;
+    }
+    .marquee__group {
+        flex-direction: column;
+        animation-name: scroll-y;
+        min-height: 100%;
+        min-width: auto;
+        width: auto;
+        height: auto;
+    }
+}
+/* ---------------------------------- */
+
+
+@keyframes scroll-x {
+    from { transform: translateX(var(--scroll-start)); }
+    to { transform: translateX(var(--scroll-end)); }
+}
+
+@keyframes scroll-y {
+    from { transform: translateY(var(--scroll-start)); }
+    to { transform: translateY(var(--scroll-end)); }
+}
+
+/* KOTAK LOGO */
+.logo-box {
+    width: var(--size);
+    height: var(--size);
+    background: var(--color-bg-accent);
+    border-radius: 0.75rem;
+    display: grid;
+    place-items: center;
+    /* Padding diperbaiki dari /4 menjadi /6 */
+    padding: calc(var(--size) / 6); 
+    box-sizing: border-box;
+}
+
+/* LOGO <img> */
+.logo-box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: invert(1);
+}
+
+/* Teks Nama */
+.text-hexsel {
+    color: #e9cb24; /* Ini warna kuning dari kode Anda */
+    font-weight: bold;
+}
+
+/* HTML Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* CSS untuk link navbar aktif (dari kode Anda) */
+.active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #facc15;
+}
+
+/* --- Glass Navbar --- */
+.glass-nav {
+  /* Efek dari CSS.glass */
+  background: rgba(43, 56, 83, 0.427);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(95, 95, 95, 0.3);
+
+  /* Posisi (Fixed & Center) */
+  position: fixed;
+  top: 1rem; /* 1rem = top-4 */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  
+  /* Hati-hati: Warna teks diubah agar kontras */
+  color: white; 
+}
+
+/* Mengubah warna link di dalam .glass-nav */
+.glass-nav ul li a {
+  color: #ffffff; /* Warna putih-abu */
+}
+
+.glass-nav ul li a:hover {
+  color: white; /* Warna putih saat hover */
+}
+
+
+
+/* --- Style untuk Tombol Tab Proyek --- */
+.tab-btn {
+  padding: 8px 20px;
+  border-radius: 9999px; /* rounded-full */
+  font-weight: 600; /* semi-bold */
+  background-color: #F1F5F9; /* bg-slate-100 */
+  color: #475569; /* text-slate-600 */
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  background-color: #1F2937; /* bg-gray-800 */
+  color: #FFFFFF; /* text-white */
+}

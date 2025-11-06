@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Study Case — Redesign madeforhmns.com | Hexsel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./hmns.css" />
+</head>
+<body class="bg-white text-gray-900 font-sans">
+
+  <!-- GLASS NAVBAR -->
+   <!-- GLASS NAVBAR -->
+    <nav class="glass-nav">
+    <div class="max-w-6xl mx-auto flex justify-between items-center py-3 px-8">
+        <!-- Tombol Home -->
+        <a href="index.html" 
+        class="text-white font-semibold text-lg hover:text-yellow-400 mr-8 transition-all duration-300">
+        Home
+        </a>
+        <!-- Navigation Links -->
+        <ul class="flex space-x-8 font-medium">
+        <li><a href="#product" class="nav-link hover:text-yellow-400 transition-all">Product</a></li>
+        <li><a href="#login" class="nav-link hover:text-yellow-400 transition-all">Login</a></li>
+        <li><a href="#redesign" class="nav-link hover:text-yellow-400 transition-all">Redesign</a></li>
+        <li><a href="#contact" class="nav-link hover:text-yellow-400 transition-all">Contact</a></li>
+        </ul>
+    </div>
+    </nav>
+
+  <!-- HERO -->
+  <header class="relative h-[68vh] flex items-center justify-center bg-cover bg-center" 
+          style="background-image: url('./images/hmnsbanner.png');">
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative z-10 max-w-4xl text-center text-white px-6">
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">Redesain</h1>
+      <p class="text-lg lg:text-xl mb-6">
+        Analisis dan desain ulang halaman dari <strong>madeforhmns.com</strong> — fokus pada halaman Produk dan Login.
+      </p>
+      <a href="#overview" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-5 py-3 rounded-full">
+        Lihat Detail
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 lg:px-12 py-16 space-y-20">
+
+    <!-- OVERVIEW -->
+    <section id="overview" class="reveal">
+      <h2 class="section-title">Ringkasan Tugas</h2>
+      <p class="text-gray-700 leading-relaxed">
+        Instruksi: Pilih satu situs (tema bebas), lakukan analisis tampilan & fungsi berdasarkan teori (Gestalt, 8 Golden Rules, dsb.), lalu redesign minimal dua section menggunakan Figma.
+        Situs yang dianalisis: <strong>https://madeforhmns.com/</strong>
+      </p>
+    </section>
+
+    <!-- PRODUCT PAGE ANALYSIS -->
+    <section id="product" class="reveal">
+      <h2 class="section-title">Halaman Produk — Analisis</h2>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Before / screenshot placeholder -->
+        <div class="space-y-4">
+          <div class="text-sm text-gray-500">Tampilan sebelum (screenshot):</div>
+          <img src="./images/Product-before.png" alt="Product page before" class="w-full rounded-xl shadow-md object-cover h- object-top">
+        </div>
+
+        <div class="prose text-gray-700">
+          <h3 class="text-xl font-semibold">Temuan berdasarkan prinsip desain</h3>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Proximity (Kedekatan)</strong>
+              <div class="ml-4">Kelebihan: harga, nama produk, dan tombol beli dikelompokkan. <br>
+              Kekurangan: deskripsi tambahan (notes) tersembunyi pada dropdown sehingga mungkin tidak terlihat.</div>
+            </li>
+
+            <li><strong>Similarity (Kesamaan)</strong>
+              <div class="ml-4">Kelebihan: konsistensi warna & font. <br>
+              Kekurangan: tombol <strong>BUY NOW</strong> kurang menonjol (ukuran & warna mirip elemen lain).</div>
+            </li>
+
+            <li><strong>Continuity (Kontinuitas)</strong>
+              <div class="ml-4">Kekurangan: section "You may also like" kurang terpisah jelas dari konten utama.</div>
+            </li>
+
+            <li><strong>Strive for Consistency</strong>
+              <div class="ml-4">Desain relatif konsisten, namun ada kesempatan untuk memperjelas hierarchy visual.</div>
+            </li>
+
+            <li><strong>Support Internal Locus of Control</strong>
+              <div class="ml-4">Pengguna dapat memilih produk; interaksi bisa ditingkatkan (mis. feedback saat add-to-cart).</div>
+            </li>
+
+            <li><strong>Reduce Short-Term Memory Load</strong>
+              <div class="ml-4">Harga & deskripsi tersedia langsung — poin positif.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-6">
+        <h4 class="font-semibold">Solusi & Rekomendasi</h4>
+        <ol class="list-decimal pl-6 space-y-2 text-gray-700">
+          <li>Buat section deskripsi produk tetap terlihat (bukan dropdown) atau tambahkan teaser yang menonjol.</li>
+          <li>Tingkatkan visual CTA: perbesar tombol <strong>BUY NOW</strong>, gunakan warna kontras dan spacing lebih luas.</li>
+          <li>Tambahkan pemisah visual (rule/hero band) sebelum rekomendasi produk untuk continuity.</li>
+          <li>Tambahkan microfeedback (toast/animation) saat user klik beli untuk meningkatkan kontrol internal.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- LOGIN PAGE ANALYSIS -->
+    <section id="login" class="reveal">
+      <h2 class="section-title">Halaman Login — Analisis</h2>
+
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <img src="./images/login-before.png" alt="Login before" class="w-full object-cover rounded-xl shadow-md object-top">
+        </div>
+
+        <div class="prose text-gray-700">
+          <h3 class="text-xl font-semibold">Temuan</h3>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Proximity</strong>: Form tersusun rapi — input dan tombol grouped dengan baik.</li>
+            <li><strong>Figure–Ground</strong>: Latar terasa kosong sehingga form tidak “pop”.</li>
+            <li><strong>Closure</strong>: Kurang pemisah visual antara area form dan background.</li>
+            <li><strong>Strive for Consistency</strong>: Tombol dan form konsisten, bagus.</li>
+            <li><strong>Enable Frequent Users to Use Shortcuts</strong>: Tidak ada opsi <strong>Remember Me</strong>.</li>
+            <li><strong>Permit Easy Reversal</strong>: Tersedia <strong>Forgot Password?</strong> (positif).</li>
+            <li><strong>Reduce Short-Term Memory Load</strong>: Hanya dua input — baik.</li>
+          </ul>
+
+          <h4 class="mt-4">Rekomendasi perbaikan</h4>
+          <ol class="list-decimal pl-6 space-y-2 text-gray-700">
+            <li>Tambahkan latar (subtle card / glass panel) di belakang form untuk meningkatkan figure–ground.</li>
+            <li>Tambahkan opsi <strong>Remember Me</strong> dan shortcut login (social / SSO jika relevan).</li>
+            <li>Gunakan garis pemisah, shadow, dan spacing untuk mempertegas area form (prinsip Closure).</li>
+            <li>Tambahkan hint & inline validation untuk mengurangi beban kognitif pengguna.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- REDESIGN PROPOSAL -->
+    <section id="redesign" class="reveal">
+      <h2 class="section-title">Proposal Redesain</h2>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Redesain Product: mockup / description -->
+        <div class="space-y-4">
+          <h3 class="text-xl font-semibold">Redesign — Product Section (proposal)</h3>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>Perjelas product hero: gambar utama besar + thumbnail di samping, judul + rating + harga langsung terlihat.</li>
+            <li>CTA kontras (warna kuning/oranye), full-width pada mobile, serta microfeedback saat klik.</li>
+            <li>Deskripsi ringkas di atas fold, detail lengkap di bawah fold tetapi tetap terlihat preview.</li>
+            <li>Rekomendasi produk memiliki divider jelas (padding + subtle border).</li>
+          </ul>
+
+          <div class="mt-4">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <img src="./images/product-redesign.png" alt="Product redesign mockup" class="w-full h-128 object-cover bg-gray-100 object-top">
+            </div>
+          </div>
+        </div>
+
+        <!-- Redesain Login: mockup / description -->
+        <div class="space-y-4">
+          <h3 class="text-xl font-semibold">Redesign — Login Section (proposal)</h3>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>Form dalam card glass (rounded) dengan subtle shadow & contrast untuk figure-ground.</li>
+            <li>Tambahkan <strong>Remember Me</strong>, opsi social login, dan link recovery yang jelas.</li>
+            <li>Inline validation dan hint text; tombol login besar & fokus.</li>
+            <li>Footer kecil berisi CTA ke product page / help.</li>
+          </ul>
+
+          <div class="mt-4">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <img src="./images/login-redesign.png" alt="Login redesign mockup" class="w-full object-cover bg-gray-100">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <p>© 2025 Hexsel — Study Case: Redesign madeforhmns.com</p>
+    </div>
+  </footer>
+
+  <script src="./hmns.js"></script>
+</body>
+</html>
